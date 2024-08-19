@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<navigation-bar title="手动创建第一个程序" back="{{false}}" color="white" background="#663399">
+</navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+      <view class="userinfo">
+        <image class="avatar" mode="cover" src="{{userInfo.avatarUrl}}"></image>
+        <view class="nickname-wrapper">
+          <text class="nickname-label">昵称</text>
+          <text >{{userInfo.nickName}}</text>
+        </view>
+      </view>
+    <button size="default" type="default" hover-class="button-hover" bind:tap="getAvatarAndName">获取头像和昵称</button>
+    <!-- <button size="default" type="default" hover-class="button-hover" open-type="chooseAvatar">获取头像和昵称</button> -->
+  </view>
+</scroll-view>
