@@ -86,10 +86,11 @@ Page({
           this.setData({
             weather:res.data.now
           });
+          this.setImageUrl();
         }
       }
     });
-    this.setImageUrl();
+    
   },
   }
 )
