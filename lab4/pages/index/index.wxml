@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <video class="video"	danmu-btn enable-danmu loop="true" id="mainVideo" controls src="{{src}}"></video>
+    <view class="danmuArea">
+      <input type="text" placeholder="发个友善的弹幕见证当下" bindinput="getDanmu"></input>
+      <button bindtap="sendDanmu">发送弹幕</button>
+    </view>
+    <view class="videoList">
+      <view class="videoBar" wx:for="{{list}}" wx:key="video{{index}}" data-url="{{item.videoUrl}}" bindtap="playVideo">
+        <image src='/images/play.png'></image>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
