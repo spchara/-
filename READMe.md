@@ -10,3 +10,7 @@
 
 ### 实验三 [微信小程序云开发](https://github.com/spchara/remote-software-develop-lab/blob/main/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/%E5%AE%9E%E9%AA%8C%E4%B8%89.md)
 学习微信小程序云开发的基础知识。完成利用文本搜索、图像识别的垃圾分类功
+
+### 实验四 [媒体API之口述校史](https://github.com/spchara/remote-software-develop-lab/blob/main/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/%E5%AE%9E%E9%AA%8C%E5%9B%9B.md)
+1. 掌握视频API的操作方法；
+2. 掌握如何发送随机颜色的弹幕
