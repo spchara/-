@@ -44,20 +44,20 @@ Page({
     }
   },
 
-  getDanmu:function(e){
-    this.setData({
-      danmuText:e.detail.value
-    });
-  },
+    getDanmu:function(e){
+      this.setData({
+        danmuText:e.detail.value
+      });
+    },
 
-  sendDanmu:function(e){
-    let text=this.data.danmuText;
-    let randomColor = this.getRandomColor();
-    this.videoCtx.sendDanmu({
-      text:text,
-      color: randomColor
-    })
-  },
+    sendDanmu:function(e){
+      let text=this.data.danmuText;
+      let randomColor = this.getRandomColor();
+      this.videoCtx.sendDanmu({
+        text:text,
+        color: randomColor
+      })
+    },
 
   getRandomColor: function() {
     let r = Math.floor(Math.random() * 256);
@@ -65,4 +65,4 @@ Page({
     let b = Math.floor(Math.random() * 256);
     return `rgb(${r},${g},${b})`;
   }
-})
+}) 
