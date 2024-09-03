@@ -18,3 +18,7 @@
 ### 实验五 [高校新闻网](https://github.com/spchara/remote-software-develop-lab/blob/main/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/%E5%AE%9E%E9%AA%8C%E4%BA%94.md)
 1. 综合所学知识创建完整的前端新闻小程序项目；
 2. 能够在开发过程中熟练掌握真机预览、调试等操作。
+
+### 实验六 [推箱子游戏](https://github.com/spchara/remote-software-develop-lab/blob/main/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/%E5%AE%9E%E9%AA%8C%E5%85%AD.md)
+1. 综合应用所学的知识创建完整的推箱子游戏
+2. 熟练掌握\<canvas>和绘图API
