@@ -19,10 +19,32 @@
       <van-col span="8">
         <image src="{{userInfo.avatarUrl}}" class="sun-image"></image>
       </van-col>
-
     </van-row>
-    
   </view>
+
+  <van-cell-group inset>
+    <van-cell
+    is-link
+    title="单元格"
+    link-type="navigateTo"
+    value="sdd"
+    url="/pages/dashboard/index"
+    />
+    <van-cell
+    is-link
+    title="单元格"
+    link-type="navigateTo"
+    value="sdd"
+    url="/pages/dashboard/index"
+    />
+    <van-cell
+    is-link
+    title="单元格"
+    link-type="navigateTo"
+    value="sdd"
+    url="/pages/dashboard/index"
+    />
+</van-cell-group>
   
   
 </view>

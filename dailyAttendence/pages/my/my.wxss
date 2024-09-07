@@ -1,11 +1,14 @@
 /* pages/my/my.wxss */
 
 .info-block {
-    background-color: #f7f8f9;
+    background-color: #ffffff;
     border-radius: 10rpx;
     padding: 30rpx;
     box-shadow: 0 20rpx 40rpx rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
+    margin-bottom: 15rpx;
+    margin-left:30rpx;
+    margin-right:30rpx;
 }
 
 .title {
@@ -42,4 +45,12 @@
     font-size: 24rpx;
     color: #7b7b7b;
     margin-top: 20rpx;
+}
+
+.container {
+  height: 700vh;
+
+  padding: 0rpx 0;
+  width: 100%;
+  background-color: #f7f8fa;
 }
