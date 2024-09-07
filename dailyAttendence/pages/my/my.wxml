@@ -1,2 +1,29 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="container">
+  <view class="info-block">
+
+    <van-row>
+      <van-col span="16">
+        <view class="title">
+          <text>{{userInfo.nickName}}</text>
+          
+        </view>
+        <text class="subtitle">柔水终成雕刀。</text>
+        <view class="progress">
+            <text>☀ 8</text>
+        </view>
+        <view class="time-info">
+            <text>最近备份时间：</text>
+            <text>25分钟之前</text>
+        </view>
+      </van-col>
+      <van-col span="8">
+        <image src="{{userInfo.avatarUrl}}" class="sun-image"></image>
+      </van-col>
+
+    </van-row>
+    
+  </view>
+  
+  
+</view>
+

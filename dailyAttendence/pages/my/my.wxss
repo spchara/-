@@ -1,1 +1,45 @@
 /* pages/my/my.wxss */
+
+.info-block {
+    background-color: #f7f8f9;
+    border-radius: 10rpx;
+    padding: 30rpx;
+    box-shadow: 0 20rpx 40rpx rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.title {
+  font-size: 36rpx;
+  margin-bottom: 5rpx;
+}
+
+.sun-image {
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 20%;
+}
+
+.subtitle {
+    color: #7b7b7b;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    font-size: 36rpx;
+    margin-top: 20rpx;
+}
+
+.small-sun {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 16rpx;
+}
+
+.time-info {
+    font-size: 24rpx;
+    color: #7b7b7b;
+    margin-top: 20rpx;
+}

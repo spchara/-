@@ -1,39 +1,66 @@
 <view class="container">
   <!-- 顶部导航栏 -->
-  <view class="top-nav">
-    <text class="nav-prev"> &lt; 前一天 </text>
-    <text class="nav-title">今天</text>
-    <text class="nav-next"> 后一天 &gt; </text>
-  </view>
+
+<view class="top-nav">
+  <text class="nav-prev">&lt; 前一天</text>
+  <text class="nav-title">今天</text>
+  <text class="nav-next"> 后一天 &gt; </text>
+</view>
 
   <!-- 中间的图标按钮区域 -->
   <!-- pages/index/index.wxml -->
-  <button class="btn-time" bindtap="toggleContent">{{isContentVisible ? '↑ 任意时间' : '↓ 任意时间'}}</button>
-  <view class="item-area">
-    <view wx:if="{{isContentVisible}}" class="item-bar">
-      <view class="icon-item">
+
+<van-collapse accordion value="{{ activeName }}" bind:change="changetime">
+  <van-collapse-item title="全部时间" name="1">
+    <van-row gutter="20">
+    <view style="margin-top: 20rpx;"></view>
+    <van-col span="8">
+      <view class="col-content">
         <image src="https://via.placeholder.com/80" class="icon" />
         <text class="icon-text">节食</text>
         <text class="icon-subtext">连续1天</text>
       </view>
-      <view class="icon-item">
+    </van-col>
+    <van-col span="8">
+      <view class="col-content">
         <image src="https://via.placeholder.com/80" class="icon" />
         <text class="icon-text">喝水</text>
         <text class="icon-subtext">连续0天</text>
       </view>
-      <view class="icon-item">
+    </van-col>
+    <van-col span="8">
+      <view class="col-content">
         <image src="https://via.placeholder.com/80" class="icon" />
         <text class="icon-text">日记</text>
         <text class="icon-subtext">连续0天</text>
       </view>
-      <view class="icon-item">
+    </van-col>
+    <van-col span="8">
+      <view class="col-content">
         <image src="https://via.placeholder.com/80" class="icon" />
         <text class="icon-text">聊天</text>
         <text class="icon-subtext">连续0天</text>
       </view>
-    </view>
-  </view>
+    </van-col>
+  </van-row>
+  </van-collapse-item>
+  <van-collapse-item title="上午" name="2">
+    代码是写出来给人看的，附带能在机器上运行
+  </van-collapse-item>
+  <van-collapse-item title="下午" name="3">
+    代码是写出来给人看的，附带能在机器上运行
+  </van-collapse-item>
+</van-collapse>
+
+
+
+
+  
+
+
+ 
 
   <!-- 底部tabBar -->
 
 </view>
+

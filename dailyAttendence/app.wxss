@@ -1,11 +1,11 @@
 /**app.wxss**/
+@import "/miniprogram_npm/@vant/weapp/common/index.wxss";
+
+
+
 .container {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* 确保子元素（如按钮）左对齐 */
-  justify-content: space-between;
-  padding: 100rpx 0;
-  box-sizing: border-box;
-  width: 100%; /* 父容器占满页面宽度 */
+  margin-top: 15rpx;
+  padding: 0rpx 0;
+  width: 100%;
 }

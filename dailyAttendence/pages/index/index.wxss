@@ -1,13 +1,10 @@
 /* 顶部导航栏 */
 .top-nav {
-  position:absolute;
-  top: 0;
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px;
   font-size: 16px;
   width:95%;
-  margin-top: 10rpx;
   z-index: 10; 
 }
 
@@ -28,44 +25,38 @@
 /* pages/index/index.wxss */
 .item-area {
   display: flex;
-  flex-direction: column; /* 纵向排列 */
-  align-items: flex-start; /* 子元素居左对齐 */
-  width: 100%; /* 占据全宽 */
-  padding: 0; /* 移除内边距 */
-  margin: 0; /* 移除外边距 */
+  flex-direction: column;
+  align-items: flex-start; 
+  width: 95%;
+  padding: 0;
+  margin: 0;
   
 }
 
 
 .btn-time {
-  padding: 10rpx;
-  margin: 0 0 20rpx 0;
-  display:block;
-  background-color: red;
-  border: none;
-  width: 100%;
-
+  margin-left: 20rpx;
 }
 
-.item-bar {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.item-area {
+  margin-bottom: 20rpx;
 }
 
-
-
-
-.icon-item {
+.col-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* 水平居中 */
+  justify-content: center; /* 垂直居中 */
+  margin-bottom:20rpx;
 }
 
 .icon {
   width: 60px;
   height: 60px;
   margin-bottom: 5px;
+  border-radius: 50%; /* 设置为圆形 */
+  border: 2px solid #3498db; /* 添加边框，颜色为蓝色 */
+  box-sizing: border-box; /* 确保边框不会影响图片的尺寸 */
 }
 
 .icon-text {

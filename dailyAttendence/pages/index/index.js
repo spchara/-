@@ -4,7 +4,8 @@ const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia0
 // pages/index/index.js
 Page({
   data: {
-    isContentVisible: false // 初始状态为隐藏
+    isContentVisible: false,
+    activeName: '1'
   },
 
   // 切换内容显示状态
@@ -12,5 +13,11 @@ Page({
     this.setData({
       isContentVisible: !this.data.isContentVisible
     });
-  }
+  },
+
+  changetime(event) {
+    this.setData({
+      activeName: event.detail,
+    });
+  },
 });
