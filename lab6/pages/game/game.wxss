@@ -22,7 +22,7 @@ canvas{
   margin:10rpx;
   background-color: #E64340;  /* 设置按钮背景颜色为红色 */
   color: white;  
-  line-height: 1.5
+
 }
 
 button {

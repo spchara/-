@@ -1,0 +1,39 @@
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="top-nav">
+    <text class="nav-prev"> &lt; 前一天 </text>
+    <text class="nav-title">今天</text>
+    <text class="nav-next"> 后一天 &gt; </text>
+  </view>
+
+  <!-- 中间的图标按钮区域 -->
+  <!-- pages/index/index.wxml -->
+  <button class="btn-time" bindtap="toggleContent">{{isContentVisible ? '↑ 任意时间' : '↓ 任意时间'}}</button>
+  <view class="item-area">
+    <view wx:if="{{isContentVisible}}" class="item-bar">
+      <view class="icon-item">
+        <image src="https://via.placeholder.com/80" class="icon" />
+        <text class="icon-text">节食</text>
+        <text class="icon-subtext">连续1天</text>
+      </view>
+      <view class="icon-item">
+        <image src="https://via.placeholder.com/80" class="icon" />
+        <text class="icon-text">喝水</text>
+        <text class="icon-subtext">连续0天</text>
+      </view>
+      <view class="icon-item">
+        <image src="https://via.placeholder.com/80" class="icon" />
+        <text class="icon-text">日记</text>
+        <text class="icon-subtext">连续0天</text>
+      </view>
+      <view class="icon-item">
+        <image src="https://via.placeholder.com/80" class="icon" />
+        <text class="icon-text">聊天</text>
+        <text class="icon-subtext">连续0天</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部tabBar -->
+
+</view>

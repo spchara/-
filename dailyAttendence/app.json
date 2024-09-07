@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/edit/edit",
+    "pages/record/record",
+    "pages/my/my",
+    "pages/manage/manage"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ce5777",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小打卡"
+  },
+  "tabBar" : {
+    "backgroundColor": "#ce5777",
+    "color": "#000",
+    "selectedColor": "#fff",
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "iconPath":"images/icons/tabBar/task.png",
+        "selectedIconPath":"images/icons/tabBar/task_fill.png",
+        "text":"打卡"
+      },
+      {
+        "pagePath":"pages/manage/manage",
+        "iconPath":"images/icons/tabBar/addressbook.png",
+        "selectedIconPath":"images/icons/tabBar/addressbook_fill.png",
+        "text":"管理"
+      },
+      {
+        "pagePath":"pages/my/my",
+        "iconPath":"images/icons/tabBar/mine.png",
+        "selectedIconPath":"images/icons/tabBar/mine_fill.png",
+        "text":"我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
