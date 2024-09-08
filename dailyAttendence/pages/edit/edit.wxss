@@ -1,1 +1,188 @@
 /* pages/edit/edit.wxss */
+/* 容器布局 */
+.container {
+
+  background-color: #f8f8f8;
+  width: 95%;
+}
+
+/* 顶部导航栏样式 */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* 每个 section 的标题 */
+.section {
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 图标网格布局 */
+.color-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.color-item {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+
+.frequency-grid, .time-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.frequency-grid .van-button, .time-grid .van-button {
+  margin: 5px;
+}
+
+/* 按钮的宽度自适应 */
+.van-button {
+  display: inline-block;
+  width: 100px;  /* 调整为合适的宽度 */
+  margin: 5px;
+}
+
+/* 将按钮组的宽度设置为100% */
+.frequency-grid, .time-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.van-button-group {
+  width: 100%;  /* 确保按钮组不超出屏幕 */
+}
+
+.container {
+  padding: 10px;
+  overflow: hidden;  /* 防止超出屏幕 */
+}
+
+.section-title {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.inputArea {
+  width: 100%; /* 占满整行 */
+  background-color: #ffffff; /* 设置背景为纯白色 */
+  border: none; /* 去掉边框 */
+  border-radius: 4px; /* 设置圆角 */
+  padding: 10px 10px; /* 给输入框内部添加一些填充 */
+  line-height: 35px;
+  box-sizing: border-box; /* 确保宽度计算包含填充 */
+  font-size: 13px; /* 设置字体大小 */
+  outline: none; /* 去掉点击时的外边框 */
+  height:35px;
+
+}
+
+.intro{
+  font-size:15px;
+  font-family: 'Arial', sans-serif;
+  text-align: left;
+  padding-left: 5px;
+}
+
+
+
+
+
+.scroll-view-horizontal {
+  white-space: nowrap; /* 防止内容换行 */
+  display: flex;
+  flex-direction: row;
+  margin-top:5rpx;
+}
+
+.radio-icon {
+  display: inline-block !important;
+  margin-right: 16px !important;
+  background-color: #f3f3f3 !important;
+
+}
+
+.icon-style {
+  font-size: 40px !important; /* 图标大小 */
+  color: #ccc; /* 默认颜色 */
+  border-radius: 20% !important;
+  box-sizing: border-box;
+}
+
+.icon-style.active {
+  background-color: #e1f5fe; /* 选中状态的背景色 */
+  border: 3px solid #000000; /* 选中状态的边框，包括样式solid和颜色 */
+}
+
+
+.color-radio {
+  display: inline-block !important;
+  margin-right: 15px !important;
+  border-radius: 50% !important;
+
+
+}
+
+.color-circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 50% !important;
+  box-sizing: border-box !important;
+}
+
+.color-circle.active {
+  border: 3px solid #000000; /* 白色边框突出显示 */
+}
+
+.finalIcon{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border:3px solid;
+}
+
+.freq-button {
+  display: inline-block !important; /* 或 flex 也可以 */
+  margin: 5px;
+  padding: 10px 20px; /* 根据需要调整 */
+  background-color: #007bff; /* 示例蓝色背景 */
+  color: white; /* 文字颜色 */
+  border-radius: 4px; /* 圆角 */
+  border: none; /* 去掉边框 */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 可选的阴影效果 */
+}
+
+.freq-button.van-checkbox--checked {
+  background-color: #ff56b3 !important; /* 选中状态的背景颜色 */
+}
+

@@ -7,11 +7,10 @@
     <van-button size="small" type="default" plain round>默认按钮</van-button>
   </view>
 
-  <!--一个习惯块样例-->
-  <view class="block-container">
+  <view class="block-container" wx:for="{{habits}}" wx:key="habitName.value"  >
     <view class="left-section">
-      <image src="https://via.placeholder.com/40" class="icon" />
-      <text class="title">喝水</text>
+      <image src="/images/icons/habit/{{item.chooseHabit}}.png" class="icon" />
+      <text class="title">{{item.habitName.value}}</text>
     </view>
     <view class="right-section">
       <text class="days">0 天</text>
@@ -20,7 +19,7 @@
   </view>
 
   <view class="custom-block">
-    <text class="block-text">+ 添加一个自定义习惯</text>
+    <text class="block-text" bindtap="go2edit">+ 添加一个自定义习惯</text>
   </view>
 
 

@@ -1,2 +1,170 @@
-<!--pages/edit/edit.wxml-->
-<text>pages/edit/edit.wxml</text>
+<view class="container">
+  <!-- 顶部导航栏 -->
+
+
+  <!-- 习惯名称输入框 -->
+  <view class="info">
+    <text class="intro"> 给该习惯命名：</text>
+    <input type="text" placeholder="例如跑步、早起等" bindinput="onNameInput" class="inputArea"/>
+  </view>
+
+  <!-- 图标和颜色选择 -->
+  <view class="section">
+    <van-row>
+      <van-col span="16">
+        <view class="intro" style="vertical-align:middle;">挑选一个图标和颜色：</view>
+      </van-col>
+      <van-col span="8">
+        <image src="/images/icons/habit/{{chooseHabit}}.png" class="finalIcon" style="background-color: {{backgroundColor}};border-color: {{chooseColor}};"></image>
+      </van-col>
+    </van-row>
+    
+
+    <van-radio-group value="{{ chooseHabit }}" bind:change="iconChange">
+      <!-- 第一行 -->
+      <scroll-view class="scroll-view-horizontal" scroll-x="true" style="height: 50px; white-space: nowrap;">
+        <van-radio name="1" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/1.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option1' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="2" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/2.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option2' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="3" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/3.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option3' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="4" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/4.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option4' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="5" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/5.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option5' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="6" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/6.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option6' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="7" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/7.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option7' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="8" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/8.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option8' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="9" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/9.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option9' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="10" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/10.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option10' ? 'active' : ''}}" />
+        </van-radio>
+      </scroll-view>
+
+      <!-- 第二行 -->
+      <scroll-view class="scroll-view-horizontal" scroll-x="true" style="height: 50px; white-space: nowrap;">
+        <van-radio name="11" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/11.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option11' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="12" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/12.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option12' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="13" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/13.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option13' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="14" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/14.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option14' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="15" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/15.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option15' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="16" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/16.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option16' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="17" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/17.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option17' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="18" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/18.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option18' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="19" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/19.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option19' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="20" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/20.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option20' ? 'active' : ''}}" />
+        </van-radio>
+      </scroll-view>
+
+      <!-- 第三行 -->
+      <scroll-view class="scroll-view-horizontal" scroll-x="true" style="height: 50px; white-space: nowrap;">
+        <van-radio name="21" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/21.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option21' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="22" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/22.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option22' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="23" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/23.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option23' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="24" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/24.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option24' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="25" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/25.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option25' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="26" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/26.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option26' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="27" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/27.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option27' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="28" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/28.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option28' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="29" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/29.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option29' ? 'active' : ''}}" />
+        </van-radio>
+        <van-radio name="30" custom-class="radio-icon" use-icon-slot>
+          <van-icon name="/images/icons/habit/30.png" slot="icon" custom-class="icon-style {{chooseHabit === 'option30' ? 'active' : ''}}" />
+        </van-radio>
+      </scroll-view>
+    </van-radio-group>
+    <view style="margin:10rpx;"></view>
+    <van-radio-group value="{{ chooseColor }}" bind:change="changeColor">
+      <scroll-view class="scroll-view-horizontal" scroll-x="true" style="height: 50px; white-space: nowrap;">
+        <van-radio wx:for="{{colors1}}" wx:key="hex" name="{{item.hex}}" custom-class="color-radio" use-icon-slot >
+          <view slot="icon" class="color-circle {{chooseColor === item.hex ? 'active' : ''}}" style="background-color: {{item.hex}}"></view>
+        </van-radio>
+      </scroll-view>
+      <scroll-view class="scroll-view-horizontal" scroll-x="true" style="height: 50px; white-space: nowrap;">
+        <van-radio wx:for="{{colors2}}" wx:key="hex" name="{{item.hex}}" custom-class="color-radio" use-icon-slot >
+          <view slot="icon" class="color-circle {{chooseColor === item.hex ? 'active' : ''}}" style="background-color: {{item.hex}}"></view>
+        </van-radio>
+      </scroll-view>
+      <scroll-view class="scroll-view-horizontal" scroll-x="true" style="height: 50px; white-space: nowrap;">
+        <van-radio wx:for="{{colors3}}" wx:key="hex" name="{{item.hex}}" custom-class="color-radio" use-icon-slot >
+          <view slot="icon" class="color-circle {{chooseColor === item.hex ? 'active' : ''}}" style="background-color: {{item.hex}}"></view>
+        </van-radio>
+      </scroll-view>
+    </van-radio-group>
+  </view>
+
+
+  <view class="section">
+    <view class="intro">习惯打卡频次：</view>
+    <van-checkbox-group value="{{ chooseFreq }}" bind:change="changeFreq">
+      <scroll-view class="scroll-view-horizontal" scroll-x="true" style="height: 50px; white-space: nowrap;">
+        <van-checkbox wx:for="{{days}}" wx:key="index" name="{{item}}" class="freq-button {{ chooseFreq.includes(item) ? 'freq-button--checked' : '' }}">{{item}}</van-checkbox>
+      </scroll-view>
+    </van-checkbox-group>
+  </view>
+
+
+  <!-- 习惯打卡情景 -->
+
+
+  <!-- 激励自己的话 -->
+  <view class="section">
+    <text class="intro">写一句话来激励自己： </text>
+    <input placeholder="写一句话来激励自己" value="{{motivation}}" bind:input="onMotivationInput" class="inputArea"/>
+  </view>
+
+  <view class="navbar">
+    <van-button type="default" size="small" bindtap="cancel">取消</van-button>
+    <van-button type="primary" size="small" bindtap="save">保存</van-button>
+  </view>
+</view>

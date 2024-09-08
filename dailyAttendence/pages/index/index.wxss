@@ -55,7 +55,7 @@
   height: 60px;
   margin-bottom: 5px;
   border-radius: 50%; /* 设置为圆形 */
-  border: 2px solid #3498db; /* 添加边框，颜色为蓝色 */
+  border: 2px solid; /* 添加边框，颜色为蓝色 */
   box-sizing: border-box; /* 确保边框不会影响图片的尺寸 */
 }
 

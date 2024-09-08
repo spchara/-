@@ -14,34 +14,14 @@
   <van-collapse-item title="全部时间" name="1">
     <van-row gutter="20">
     <view style="margin-top: 20rpx;"></view>
-    <van-col span="8">
+    <van-col span="8" wx:for="{{habits}}" wx:key="habitName.value" data-name="item.habitName.value" bindtap="navigateWithName">
       <view class="col-content">
-        <image src="https://via.placeholder.com/80" class="icon" />
-        <text class="icon-text">节食</text>
+        <image src="/images/icons/habit/{{item.chooseHabit}}.png" class="icon" style="border-color:{{item.chooseColor}}"/>
+        <text class="icon-text">{{item.habitName.value}}</text>
         <text class="icon-subtext">连续1天</text>
       </view>
     </van-col>
-    <van-col span="8">
-      <view class="col-content">
-        <image src="https://via.placeholder.com/80" class="icon" />
-        <text class="icon-text">喝水</text>
-        <text class="icon-subtext">连续0天</text>
-      </view>
-    </van-col>
-    <van-col span="8">
-      <view class="col-content">
-        <image src="https://via.placeholder.com/80" class="icon" />
-        <text class="icon-text">日记</text>
-        <text class="icon-subtext">连续0天</text>
-      </view>
-    </van-col>
-    <van-col span="8">
-      <view class="col-content">
-        <image src="https://via.placeholder.com/80" class="icon" />
-        <text class="icon-text">聊天</text>
-        <text class="icon-subtext">连续0天</text>
-      </view>
-    </van-col>
+    
   </van-row>
   </van-collapse-item>
   <van-collapse-item title="上午" name="2">

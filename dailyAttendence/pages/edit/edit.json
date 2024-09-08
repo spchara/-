@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "window": {
+    "navigationBarBackgroundColor": "#ce5777",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "添加新的打卡吧"
+  }
 }
