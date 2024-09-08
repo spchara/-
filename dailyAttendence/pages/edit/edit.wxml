@@ -5,7 +5,7 @@
   <!-- 习惯名称输入框 -->
   <view class="info">
     <text class="intro"> 给该习惯命名：</text>
-    <input type="text" placeholder="例如跑步、早起等" bindinput="onNameInput" class="inputArea"/>
+    <input type="text" placeholder="例如跑步、早起等" bindinput="onNameInput" class="inputArea" value="{{habitName}}"/>
   </view>
 
   <!-- 图标和颜色选择 -->
@@ -165,6 +165,8 @@
 
   <view class="navbar">
     <van-button type="default" size="small" bindtap="cancel">取消</van-button>
-    <van-button type="primary" size="small" bindtap="save">保存</van-button>
+    <van-button wx:if="{{modify}}" type="primary" size="small" bindtap="modify">修改</van-button>
+    <van-button wx:else type="primary" size="small" bindtap="save">保存</van-button>
+    
   </view>
 </view>

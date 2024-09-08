@@ -14,11 +14,11 @@
   <van-collapse-item title="全部时间" name="1">
     <van-row gutter="20">
     <view style="margin-top: 20rpx;"></view>
-    <van-col span="8" wx:for="{{habits}}" wx:key="habitName.value" data-name="item.habitName.value" bindtap="navigateWithName">
-      <view class="col-content">
+    <van-col span="8" wx:for="{{habits}}" wx:key="habitName">
+      <view class="col-content" bindtap="showDialog" data-name="{{item.habitName}}">
         <image src="/images/icons/habit/{{item.chooseHabit}}.png" class="icon" style="border-color:{{item.chooseColor}}"/>
-        <text class="icon-text">{{item.habitName.value}}</text>
-        <text class="icon-subtext">连续1天</text>
+        <text class="icon-text">{{item.habitName}}</text>
+        <text class="icon-subtext">累计{{item.punchCount}}天</text>
       </view>
     </van-col>
     
@@ -31,16 +31,29 @@
     代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
 </van-collapse>
-
-
-
-
-  
-
-
- 
-
-  <!-- 底部tabBar -->
-
 </view>
+
+<van-dialog
+  use-slot
+  title="习惯记录"
+  show="{{ attendence }}"
+  show-cancel-button
+  bind:confirm="onCheckIn"
+  bind:cancel="onClose"
+
+>
+  <view class="col-content">
+    <image src="/images/icons/habit/{{punchInHabit.chooseHabit}}.png" class="icon" style="border-color:{{punchInHabit.chooseColor}}"/>
+    <text class="icon-text">{{punchInHabit.habitName}}</text>
+    <text class="icon-subtext">累计天</text>
+  </view>
+  <van-radio-group value="{{ status }}" bind:change="onChange" direction="horizontal" class="radio-group">
+    <van-radio name="1" custom-class="custom-radio {{ name == status? 'active' : ''}}">完成</van-radio>
+    <van-radio name="2" custom-class="custom-radio {{ name == status? 'active' : ''}}">待定</van-radio>
+    <van-radio name="3" custom-class="custom-radio {{ name == status? 'active' : ''}}">失败</van-radio>
+  </van-radio-group>
+  <input placeholder="说点什么" value="{{say}}" bind:input="saySomething" class="inputArea"/>
+</van-dialog>
+
+
 

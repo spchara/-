@@ -7,7 +7,7 @@
   padding: 10px;
   border: 1px solid #e0e0e0;
   border-radius: 10px;
-  background-color: #f9f9f9;
+
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   margin: 10px 10px; /* 调整左右的外边距，保证两边留空 */
 }
@@ -42,7 +42,7 @@
 
 .subtext {
   font-size: 12px;
-  color: #999;
+  color: #000;
 }
 
 
@@ -62,6 +62,7 @@
   border-radius: 10px;      /* 圆角 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
   margin: 10px 10px;           /* 外边距 */
+
 }
 
 .block-text {

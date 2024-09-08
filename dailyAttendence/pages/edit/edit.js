@@ -1,4 +1,5 @@
 const db = wx.cloud.database();
+const utils = require('../../utils/util.js');
 
 function saveHabit(habitData) {
   db.collection('habits').add({
@@ -34,6 +35,8 @@ function saveHabit(habitData) {
 
 Page({
   data: {
+    modify : false,
+    id:null,
     habitdata:[],
     habitName: '',  // 习惯名称
     chooseHabit: '1',
@@ -60,16 +63,43 @@ Page({
     return `rgba(${r}, ${g}, ${b}, ${opacity})`;
   },
 
-  onLoad: function() {
+  onLoad: function(options) {
     this.setData({
-      backgroundColor:this.hexToRgba(this.data.chooseColor,0.5)
+      backgroundColor:this.hexToRgba(this.data.chooseColor,0.5),
+      modify:false
     })
+    if(options.name){
+      console.log(options.name);
+      const name=options.name;
+    
+      utils.fetchHabitByName(name).then(habit => {
+        console.log('获取到的习惯:', habit);
+        this.setData({
+          habitdata: habit,
+          modify:true,
+          chooseHabit:habit.chooseHabit,
+          chooseColor:habit.chooseColor,
+          chooseFreq:habit.chooseFreq,
+          backgroundColor:habit.backgroundColor,
+          id:habit._id,
+          habitName:habit.habitName,
+          motivation:habit.motivation
+        });
+
+      }).catch(error => {
+        console.error('获取习惯失败:', error);
+        wx.showToast({
+          title: '习惯未找到',
+          icon: 'none'
+        });
+      });
+    }
   },
   // 输入习惯名称
   onNameInput(e) {
     console.log(e.detail);
     this.setData({
-      habitName: e.detail
+      habitName: e.detail.value
     });
   },
 
@@ -136,92 +166,146 @@ Page({
 
   // 保存操作
   // 保存操作
-save() {
-  wx.cloud.callFunction({
-    name: 'login',
-    data: {},
-    success: res => {
-      const openid = res.result.openid;
-      console.log('获取到的openid:', openid);
-      // 准备需要保存的数据
-      const habitData = {
-        openid: openid,  // 设置获取到的openid
-        habitName: this.data.habitName,
-        chooseHabit: this.data.chooseHabit,
-        chooseColor: this.data.chooseColor,
-        backgroundColor: this.data.backgroundColor,
-        chooseFreq: this.data.chooseFreq,
-        motivation: this.data.motivation
-      };
-
-      const db = wx.cloud.database();
-      // 先查询该习惯是否已存在
-      db.collection('habits').where({
-        openid: habitData.openid,
-        habitName: habitData.habitName // 使用习惯名称和openid作为唯一标识
-      }).get({
-        success: queryRes => {
-          if (queryRes.data.length > 0) {
-            // 习惯已存在，更新记录
-            const habitId = queryRes.data[0]._id; // 获取已存在记录的_id
-            db.collection('habits').doc(habitId).update({
-              data: habitData,
-              success: updateRes => {
-                console.log('习惯更新成功', updateRes);
-                wx.showToast({
-                  title: '习惯更新成功',
-                  icon: 'success',
-                  duration: 2000
-                });
-                wx.navigateBack();
-              },
-              fail: err => {
-                console.error('习惯更新失败', err);
-                wx.showToast({
-                  title: '习惯更新失败',
-                  icon: 'none',
-                  duration: 2000
-                });
-              }
+  save() {
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        const openid = res.result.openid;
+        console.log('获取到的openid:', openid);
+        // 准备需要保存的数据
+        const habitData = {
+          openid: openid,  // 设置获取到的openid
+          habitName: this.data.habitName,
+          chooseHabit: this.data.chooseHabit,
+          chooseColor: this.data.chooseColor,
+          backgroundColor: this.data.backgroundColor,
+          chooseFreq: this.data.chooseFreq,
+          motivation: this.data.motivation
+        };
+  
+        const db = wx.cloud.database();
+        // 直接添加新记录
+        db.collection('habits').add({
+          data: habitData,
+          success: addRes => {
+            console.log('习惯添加成功', addRes);
+            wx.showToast({
+              title: '习惯添加成功',
+              icon: 'success',
+              duration: 2000
             });
-          } else {
-            // 习惯不存在，添加新记录
-            db.collection('habits').add({
-              data: habitData,
-              success: addRes => {
-                console.log('习惯添加成功', addRes);
-                wx.showToast({
-                  title: '习惯添加成功',
-                  icon: 'success',
-                  duration: 2000
-                });
-                wx.navigateBack();
-              },
-              fail: err => {
-                console.error('习惯添加失败', err);
-                wx.showToast({
-                  title: '习惯添加失败',
-                  icon: 'none',
-                  duration: 2000
-                });
-              }
+            wx.navigateBack();
+          },
+          fail: err => {
+            console.error('习惯添加失败', err);
+            wx.showToast({
+              title: '习惯添加失败',
+              icon: 'none',
+              duration: 2000
             });
           }
-        },
-        fail: err => {
-          console.error('查询习惯失败', err);
-        }
-      });
-    },
-    fail: err => {
-      console.error('调用云函数失败：', err);
-      wx.showToast({
-        title: '获取用户信息失败',
-        icon: 'none',
-        duration: 2000
-      });
-    }
-  });
-}
+        });
+      },
+      fail: err => {
+        console.error('调用云函数失败：', err);
+        wx.showToast({
+          title: '获取用户信息失败',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
+  },
+  
+
+  modify(){
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        const openid = res.result.openid;
+        console.log('获取到的openid:', openid);
+        // 准备需要保存的数据
+        const habitData = {
+          openid: openid,  // 设置获取到的openid
+          habitName: this.data.habitName,
+          chooseHabit: this.data.chooseHabit,
+          chooseColor: this.data.chooseColor,
+          backgroundColor: this.data.backgroundColor,
+          chooseFreq: this.data.chooseFreq,
+          motivation: this.data.motivation
+        };
+  
+        const db = wx.cloud.database();
+        // 先查询该习惯是否已存在
+        db.collection('habits').where({
+          openid: habitData.openid,
+          _id: this.data.id // 使用习惯名称和openid作为唯一标识
+        }).get({
+          success: queryRes => {
+            if (queryRes.data.length > 0) {
+              // 习惯已存在，更新记录
+              const habitId = queryRes.data[0]._id; // 获取已存在记录的_id
+              db.collection('habits').doc(habitId).update({
+                data: habitData,
+                success: updateRes => {
+                  console.log('习惯更新成功', updateRes);
+                  wx.showToast({
+                    title: '习惯更新成功',
+                    icon: 'success',
+                    duration: 2000
+                  });
+                  wx.navigateBack();
+                },
+                fail: err => {
+                  console.error('习惯更新失败', err);
+                  wx.showToast({
+                    title: '习惯更新失败',
+                    icon: 'none',
+                    duration: 2000
+                  });
+                }
+              });
+            } else {
+              // 习惯不存在，添加新记录
+              db.collection('habits').add({
+                data: habitData,
+                success: addRes => {
+                  console.log('习惯添加成功', addRes);
+                  wx.showToast({
+                    title: '习惯添加成功',
+                    icon: 'success',
+                    duration: 2000
+                  });
+                  wx.navigateBack();
+
+                },
+                fail: err => {
+                  console.error('习惯添加失败', err);
+                  wx.showToast({
+                    title: '习惯添加失败',
+                    icon: 'none',
+                    duration: 2000
+                  });
+                }
+              });
+            }
+          },
+          fail: err => {
+            console.error('查询习惯失败', err);
+          }
+        });
+      },
+      fail: err => {
+        console.error('调用云函数失败：', err);
+        wx.showToast({
+          title: '获取用户信息失败',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
+  }
 
 });

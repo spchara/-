@@ -69,13 +69,58 @@
   color: #999;
 }
 
-
-
-
-
-
 .content {
   padding: 20rpx;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-around; /* 使三个选项均匀分布 */
+}
+
+.custom-radio {
+  flex: 1; /* 每个选项平均分配空间 */
+  padding: 10px 0; /* 增加按钮的触摸面积 */
+  border: 1px solid #ccc; /* 边框样式 */
+  border-radius: 4px; /* 圆角 */
+  text-align: center; /* 文本居中 */
+  background-color: #f8f8f8; /* 背景颜色 */
+  position: relative; /* 相对定位用于隐藏圆点 */
+
+  
+}
+
+
+.custom-radio::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 4px;
+  pointer-events: none; /* 允许点击事件穿透 */
+  
+}
+
+
+.custom-radio::before {
+  display: none; /* 隐藏原生的圆点 */
+}
+
+.inputArea {
+  width: 100%; /* 占满整行 */
+  background-color: #ffffff; /* 设置背景为纯白色 */
+  border: none; /* 去掉边框 */
+  border-radius: 4px; /* 设置圆角 */
+  padding: 10px 10px; /* 给输入框内部添加一些填充 */
+  line-height: 35px;
+  box-sizing: border-box; /* 确保宽度计算包含填充 */
+  font-size: 13px; /* 设置字体大小 */
+  outline: none; /* 去掉点击时的外边框 */
+  height:35px;
+
 }
