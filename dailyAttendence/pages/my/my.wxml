@@ -25,23 +25,14 @@
   <van-cell-group inset>
     <van-cell
     is-link
-    title="单元格"
+    title="修改资料"
     link-type="navigateTo"
-    value="sdd"
-    url="/pages/dashboard/index"
+    url="/pages/profile/profile"
     />
     <van-cell
     is-link
-    title="单元格"
+    title="备份数据"
     link-type="navigateTo"
-    value="sdd"
-    url="/pages/dashboard/index"
-    />
-    <van-cell
-    is-link
-    title="单元格"
-    link-type="navigateTo"
-    value="sdd"
     url="/pages/dashboard/index"
     />
 </van-cell-group>

@@ -26,7 +26,8 @@
     "pages/edit/edit",
     "pages/record/record",
     "pages/my/my",
-    "pages/manage/manage"
+    "pages/manage/manage",
+    "pages/profile/profile"
   ],
   "cloud":true,
   "window": {

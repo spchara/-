@@ -79,6 +79,10 @@ Page({
         console.error('获取 openid 失败', err);
       }
     });
+  },
+
+  onShow(){
+    this.onLoad();
   }
 
 
